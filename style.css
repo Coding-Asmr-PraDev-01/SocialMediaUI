@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --faint-bg: #eef0ef;
+    --faint-text-clr: rgba(0,0,0,0.4);
+    --common-padding: 2.5rem 2rem;
+    --color-red: #ff0000;
+    --color-sky-blue: #00BFFF;
+}
+
+body{
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--faint-bg);
+    overflow-x: hidden; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.faint-text{
+    font-size: 0.9rem;
+    color: var(--faint-text-clr);
+    font-weight: 500;
+}
+
+.text-small{
+    font-size: 13px;
+}
+
+.heading-small{
+    font-size: 14px;
+}
+
+.blueTicImg{
+    width: 40px;
+}
+
+.logoBx{
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+.logo{
+    width: 200px;
+}
+
+
+.container{
+    position: relative;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    width: 1300px;
+    height: auto;
+    grid-template-columns: 300px minmax(350px, 1fr) 1fr;
+    margin: 2rem 0;
+}
+
+.container .leftBar{
+    position: relative;
+}
+
+.toggleMenu{
+    position:absolute;
+    top: 0;
+    left: 1rem;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: var(--color-sky-blue);
+    display: none;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggleMenu i{
+    color: #fff;
+}
+
+.userProfileBx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: var(--common-padding);
+}
+
+.userProfileBx .profileImg {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.userProfileBx .profileImg img{
+    position: absolute; 
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;    
+    border: 4px solid #fff;
+}
+
+.userProfileBx .profileImg::before{
+    content: "";
+    position: absolute;
+    /* padding: 2rem; */
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    border: 4px solid var(--color-sky-blue);
+}
+
+
+.userProfileBx .userDetails{
+    text-align: center;
+    margin-top: 1.1rem;
+}
+
+.userProfileBx .userDetails .username{
+    font-size: 1.2rem;
+}
+
+.userProfileBx .followersBx{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 2.6rem;
+}
+
+/* navigation */
+.navigationBar{
+    padding: var(--common-padding);
+
+}
+
+.navigationBar .navItems{
+    list-style: none;  
+}
+
+.navigationBar .navItems a{
+    text-decoration: none;
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    transition: 0.2s ;
+}
+
+.navigationBar .navItems li{
+    position: relative;
+    margin-bottom: 1.6rem;
+}
+
+.navigationBar .navItems li:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.3rem;
+    width: 3px;
+    height: 100%;
+    background-color: var(--color-red);
+    visibility: none;
+    display: none;
+
+}
+
+.navigationBar .navItems li:hover:before{
+    visibility: visible;
+    display: block;
+}
+
+.navigationBar .navItems li:hover > a{
+    color:var(--color-red);
+    transform: scale(1.1);
+}
+
+
+/* Middle section */
+.middleSection{
+    padding: var(--common-padding);
+}
+.middleSection .profileBio .topBx{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.middleSection .profileBio .topBx .personImg{
+    width: 100%;
+    height: 530px;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-sky-blue);
+    border-radius: 0.6rem;
+}
+
+.middleSection .profileBio .topBx .personImg img{
+    position: absolute;
+    top: 0; left: 1.4rem;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.middleSection .profileBio .topBx .contentBx h2{
+    display: flex;
+    align-items: center;
+}
+
+.middleSection .bottomBx{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.middleSection .bottomBx .FavoriteProfiles .fProfiles{
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+    cursor: pointer;
+}
+
+.middleSection .bottomBx .FavoriteProfiles .fProfiles div{
+    position: relative;
+    width: 40px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 0.3rem;
+}
+
+.middleSection .bottomBx .FavoriteProfiles .fProfiles div:last-child::before{
+    content: "+45";
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.5);
+    z-index: 333;
+}
+
+.middleSection .bottomBx .FavoriteProfiles .fProfiles div img{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feedSection {
+    padding: var(--common-padding);
+}
+
+.feedSection .statusBxs{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    grid-template-rows: 240px;
+    grid-gap: 1rem;
+}
+
+.feedSection .statusBxs .statusBx{
+    border-radius: 0.3rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 240px;
+    position: relative;
+    cursor: pointer;
+}
+
+.feedSection .statusBxs .statusBx:nth-child(1){
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 147, 233, 0.3),
+        rgba(128, 208, 199, 0.3)
+      ), url("./Assets/tour-1.png");
+}
+
+.feedSection .statusBxs .statusBx:nth-child(2){
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 154, 139, 0.3),
+        rgba(255, 106, 136, 0.3)
+      ), url("./Assets/tour-2.jpg");
+}
+
+.feedSection .statusBxs .statusBx:nth-child(3){
+    background-image: linear-gradient(
+        to bottom,
+        rgba(250, 217, 97, 0.3),
+        rgba(247, 107, 28, 0.3)
+      ), url("./Assets/tour-7.jpg");
+}
+
+.feedSection .statusBxs .statusBx:nth-child(4){
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 60, 172, 0.3),
+        rgba(120, 75, 160, 0.3)
+      ), url("./Assets/tour-4.jpg");
+}
+
+.feedSection .statusBxs .statusBx:nth-child(5){
+    background-image: linear-gradient(
+        to bottom,
+        rgba(238, 0, 255, 0.3),
+        rgba(255, 0, 55, 0.3)
+      ), url("./Assets/tour-5.jpg");
+      
+}
+
+.feedSection .statusBxs .statusBx .statusText{
+    font-size: 12px;
+    position: absolute;
+    bottom: 0; left: 0;
+    color: rgba(255, 255, 255, 1);
+    padding: 1rem;
+    text-align: center;
+}
+
+.feedSection h2{
+    margin-bottom: 0.6rem;
+    font-size: 23px;
+}
+
+.photos {
+    margin-top: 1.4rem;
+}
+
+.photos .photoBxs{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-rows: 190px;
+    gap: 1.4rem;
+}
+
+.photos .photoBxs .photoBx{
+    border-radius: 0.3rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 190px;
+    cursor: pointer;
+}
+
+.photos .photoBxs .photoBx:nth-child(1){
+    background-image: url('./Assets/photo-1.jpg');
+}
+
+.photos .photoBxs .photoBx:nth-child(2){
+    background-image: url('./Assets/photo-2.jpg');
+}
+
+.photos .photoBxs .photoBx:nth-child(3){
+    background-image: url('./Assets/photo-3.jpg');
+}
+
+.photos .photoBxs .photoBx:nth-child(4){
+    background-image: url('./Assets/photo-4.jpg');
+}
+
+.photos .photoBxs .photoBx:nth-child(5){
+    background-image: url('./Assets/photo-5.jpg');
+}
+
+.photos .photoBxs .photoBx:nth-child(6){
+    background-image: url('./Assets/photo-6.jpg');
+}
+
+
+@media (max-width: 768px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .leftBar {
+        display: none;
+        left: -100%;
+        text-align: center;
+    }
+    .leftBar .navigationBar .navItems{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 991px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+    
+    .middleSection .profileBio .topBx .personImg img{
+        object-fit:contain;
+    }
+    .navigationBar .navItems li:hover > a{
+        transform: scale(1);
+    }
+    .toggleMenu{
+        display: block;
+    }
+}
+
+@media (max-width: 430px){
+    .middleSection .profileBio .topBx .personImg img{
+        object-fit:cover;
+    }
+
+    .container{
+        margin: 0;
+    }
+}
