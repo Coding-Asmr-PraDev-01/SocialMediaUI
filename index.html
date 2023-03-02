@@ -191,20 +191,20 @@
     </div>
 
     <script>
-      const toggleMenu = document.querySelector(".toggleMenu");
-      const leftBar = document.querySelector(".leftBar");
+        const toggleMenu = document.querySelector(".toggleMenu");
+        const leftBar = document.querySelector(".leftBar");
 
-      let isMenuOpen = false;
-      toggleMenu.addEventListener("click", () => {
-        if (!isMenuOpen) {
-          leftBar.style.display = "block";
-          leftBar.style.left = "0%";
-        } else {
-          leftBar.style.display = "none";
-          leftBar.style.left = "-100%";
-        }
-        isMenuOpen = !isMenuOpen;
-      });
+        let isMenuOpen = false;
+        toggleMenu.addEventListener("click", () => {
+            if(!isMenuOpen){
+                leftBar.style.display = "block";
+                leftBar.style.left = "0%";
+            }else{
+                leftBar.style.display = "none";
+                leftBar.style.left = "-100%";
+            }
+            isMenuOpen = !isMenuOpen;
+        });
     </script>
   </body>
 </html>
